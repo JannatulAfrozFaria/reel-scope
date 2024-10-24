@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return Promise.resolve([
       {
         source: "/",
-        destination: "/discover/now_playing",
+        destination: "/discover/popular",
         permanent: true,
       },
     ]);

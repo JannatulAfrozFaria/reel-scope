@@ -12,3 +12,14 @@
     @apply text-white bg-primary;
   }
 }
+@layer components {
+  .sidebarTitle{
+    @apply font-semibold text-[18px];
+  }
+  .sidebarLink{
+    @apply text-textColor ml-4 cursor-pointer hover:text-white transition w-fit;
+  }
+  .sidebarActive{
+    @apply text-white;
+  }
+}

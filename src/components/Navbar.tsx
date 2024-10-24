@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <div className='bg-primary'>
             <div className="flex justify-between items-center py-4 px-2 md:px-10">
-                <Link className='hidden md:block' href="/discover/now_playing">
+                <Link className='hidden md:block' href="/discover/popular">
                     <h2 className='text-2xl'>Reel Scope</h2>
                 </Link>
                 <form className='space-x-4 hidden md:block' onSubmit={handleSubmit}>
