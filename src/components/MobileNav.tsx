@@ -2,6 +2,8 @@ import { BASE_URL } from '@/utilityComponents/Const';
 import axios from 'axios';
 import { useParams, useSearchParams } from 'next/navigation';
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { AiOutlineMenu } from 'react-icons/ai';
+import {IoMdClose} from "react-icons/io";
 
 interface propsType{
     input: string;
@@ -28,11 +30,17 @@ const MobileNav = ({input,setInput,handleSubmit}:propsType) => {
             return;
         }
         setSelectedGenre(params.id?.toString());
-    },[searchParams.get("genre"),params.id]);
+    },[searchParams.get("genre"), params.id]);
     return (
-        <div>
+        <>
             <form className='md:hidden flex justify-between w-[100%]' onSubmit={handleSubmit}></form>
-        </div>
+            <div onClick={()=>setIsOpen(true)}>
+                <AiOutlineMenu size ={30} />
+            </div>
+            <div className='space-x-4'>
+                <input className='bg-secondary px-4 py-2 outline-none placeholder:text-textColor text-[14px] w-[180px]' type="text" />
+            </div>
+        </>
     );
 };
 

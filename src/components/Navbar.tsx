@@ -22,7 +22,10 @@ const Navbar = () => {
                     <input className='bg-secondary px-4 py-2 outline-none placeholder:text-textColor' type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder='Search Movies...' />
                     <button className='bg-secondary text-textColor py-2 px-4 hover:bg-textColor hover:text-white'>Search</button>
                 </form>
-                <MobileNav input = {input} setInput = {setInput} handleSubmit={handleSubmit} />
+                <div className="md:hidden block">
+                    <MobileNav input = {input} setInput = {setInput} handleSubmit={handleSubmit} />
+                </div>
+                
             </div>
         </div>
     );
