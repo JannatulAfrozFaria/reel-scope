@@ -1,4 +1,5 @@
 "use client";
+import Card from '@/components/Card';
 import Loading from '@/components/Loading';
 import { BASE_URL } from '@/utilityComponents/Const';
 import axios from 'axios';
@@ -7,7 +8,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 export interface Imovie{
     id:string;
-    poster_path: string;
+    poster_path: string; 
     title: string;
     release_date: string;
 }
@@ -75,7 +76,14 @@ const Discover = () => {
         <main className="bg-primary max-h-[calc(100vh-77px)] min-h-[calc(100vh-77px)] p-8 overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#22222a] scrollbar-track-primary relative">
             <h2 className="text-[24px] tracking-[2px]">{title}</h2>
             {movies.length === 0 && <Loading />}
-            
+            <div className="grid gap-8 moviesGrid place_items-center mt-8" >
+                {movies.map((movie: Imovie)=>( 
+                <Card key={movie.id} 
+                img={movie.poster_path} 
+                id = {movie.id} 
+                title={movie.title} 
+                releaseDate = {movie.release_date}  />)) }
+            </div>
         </main>
     );
 };
